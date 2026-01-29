@@ -1,7 +1,7 @@
-﻿using Scripts.GameEvents;
+﻿using GameEvents;
 using Zenject;
 
-namespace Scripts.Installers
+namespace Installers
 {
     public class GameEventsInstaller : MonoInstaller
     {

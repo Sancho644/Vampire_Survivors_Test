@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Scripts.GameEvents
+namespace GameEvents
 {
     public class GameEventsDispatcher : IGameEventsDispatcher
     {

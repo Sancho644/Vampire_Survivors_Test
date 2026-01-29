@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Scripts.Core.Ecs
+namespace Core.Ecs
 {
     public abstract class AbstractMonoEntity : MonoBehaviour
     {

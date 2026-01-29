@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Scripts.Core.Ecs
+namespace Core.Ecs
 {
     public class MonoLink<T> : MonoBehaviour
         where T : struct

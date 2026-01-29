@@ -1,4 +1,4 @@
-﻿namespace Scripts.GameEvents
+﻿namespace GameEvents
 {
     public interface IGameEvent
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Scripts.GameEvents
+namespace GameEvents
 {
     public class GameEventsController : MonoBehaviour
     {

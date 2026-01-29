@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace Scripts.GameEvents
+namespace GameEvents
 {
     public delegate void GameEventHandler<in TEvent>([NotNull] TEvent @event)
         where TEvent : IGameEvent;
