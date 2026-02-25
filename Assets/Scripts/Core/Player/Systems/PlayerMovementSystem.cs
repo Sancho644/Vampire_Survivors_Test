@@ -5,40 +5,52 @@ using UnityEngine;
 
 namespace Core.Player.Systems
 {
-    public class PlayerMovementSystem : IEcsRunSystem
+    public class PlayerMovementSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerComponent, MoveInputComponent> _ecsFilter;
+        private readonly EcsFilter<PlayerComponent, MoveInputComponent, PositionComponent> _ecsFilter;
 
-        public void Run()
+        public void Init()
         {
             foreach (var i in _ecsFilter)
             {
                 var playerCompRef = _ecsFilter.Get1Ref(i);
-                var moveInputCompRef = _ecsFilter.Get2Ref(i);
+                var positionCompRef = _ecsFilter.Get3Ref(i);
 
-                ref var moveInputComponent = ref moveInputCompRef.Unref();
-                var moveValue = moveInputComponent.Value;
-                
-                MovePlayer(playerCompRef, moveValue);
+                ref var playerComponent = ref playerCompRef.Unref();
+                ref var positionComponent = ref positionCompRef.Unref();
+
+                positionComponent.Value = playerComponent.Player.PlayerTransform.position;
             }
         }
 
-        private void MovePlayer(EcsComponentRef<PlayerComponent> playerCompRef, Vector2 moveValue)
+        public void Run()
         {
-            if (moveValue.magnitude == 0f)
+            var deltaTime = Time.deltaTime;
+
+            foreach (var i in _ecsFilter)
             {
-                return;
+                var moveInputCompRef = _ecsFilter.Get2Ref(i);
+                var positionCompRef = _ecsFilter.Get3Ref(i);
+
+                ref var moveInputComponent = ref moveInputCompRef.Unref();
+                var moveValue = moveInputComponent.Value;
+
+                if (moveValue.sqrMagnitude <= 0f)
+                {
+                    continue;
+                }
+
+                if (moveValue.sqrMagnitude > 1f)
+                {
+                    moveValue.Normalize();
+                }
+
+                var direction = new Vector3(moveValue.x, 0f, moveValue.y);
+
+                ref var positionComponent = ref positionCompRef.Unref();
+
+                positionComponent.Value += direction * deltaTime;
             }
-
-            if (moveValue.sqrMagnitude > 1f)
-            {
-                moveValue.Normalize();
-            }
-
-            ref var playerComponent = ref playerCompRef.Unref();
-
-            var moveDirection = new Vector3(moveValue.x, 0f, moveValue.y);
-            playerComponent.Player.PlayerTransform.position += moveDirection * Time.deltaTime;
         }
     }
 }
