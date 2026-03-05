@@ -21,9 +21,10 @@ namespace Core.Ecs
             Systems
                 .Add(_instantiator.Instantiate<PlayerInputSystem>())
                 .Add(_instantiator.Instantiate<PlayerMovementSystem>())
+                .Add(_instantiator.Instantiate<PlayerPositionSyncSystem>())
+                .Add(_instantiator.Instantiate<EnemySpawnSystem>())
                 .Add(_instantiator.Instantiate<EnemyMovementSystem>())
-                .Add(_instantiator.Instantiate<EnemyPositionSyncSystem>())
-                .Add(_instantiator.Instantiate<PlayerPositionSyncSystem>());
+                .Add(_instantiator.Instantiate<EnemyPositionSyncSystem>());
 
             Systems.Init();
         }
