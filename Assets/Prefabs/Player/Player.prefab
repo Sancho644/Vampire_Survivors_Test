@@ -53,7 +53,7 @@ MonoBehaviour:
   moveInputComponentLink: {fileID: 7855743684225799007}
   playerTagComponentLink: {fileID: 8068516329220179589}
   positionComponentLink: {fileID: 7900665245678576982}
-  cachedTransformRefComponentLink: {fileID: 6782611755813322736}
+  cachedTransformComponentLink: {fileID: 6782611755813322736}
 --- !u!114 &4725406203963508272
 MonoBehaviour:
   m_ObjectHideFlags: 0

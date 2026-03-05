@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTagComponentLink: {fileID: 8503317380109459826}
-  cachedTransformRefComponentLink: {fileID: 4336164629543255414}
+  cachedTransformComponentLink: {fileID: 4336164629543255414}
   positionComponentLink: {fileID: 6278074607300839408}
 --- !u!114 &1609031739694140461
 MonoBehaviour:
