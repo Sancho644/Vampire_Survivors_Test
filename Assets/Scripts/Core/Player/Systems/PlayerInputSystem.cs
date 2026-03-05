@@ -8,7 +8,7 @@ namespace Core.Player.Systems
 {
     public class PlayerInputSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
-        private readonly EcsFilter<PlayerComponent, MoveInputComponent> _ecsFilter;
+        private readonly EcsFilter<PlayerComponent, MoveInputComponent> _ecsFilter = null;
 
         private PlayerInputActions _inputActions;
         private InputAction _moveAction;

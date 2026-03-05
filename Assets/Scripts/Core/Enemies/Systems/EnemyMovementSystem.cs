@@ -10,8 +10,8 @@ namespace Core.Enemies.Systems
     {
         private const float SqrMagnitudeTolerance = 0.0001f;
         
-        private readonly EcsFilter<PlayerTagComponent, PositionComponent> _playerFilter;
-        private readonly EcsFilter<EnemyTagComponent, PositionComponent> _enemyFilter;
+        private readonly EcsFilter<PlayerTagComponent, PositionComponent> _playerFilter = null;
+        private readonly EcsFilter<EnemyTagComponent, PositionComponent> _enemyFilter = null;
 
         public void Run()
         {

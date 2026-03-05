@@ -7,7 +7,7 @@ namespace Core.Player.Systems
 {
     public class PlayerMovementSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerComponent, MoveInputComponent, PositionComponent> _ecsFilter;
+        private readonly EcsFilter<PlayerComponent, MoveInputComponent, PositionComponent> _ecsFilter = null;
 
         public void Init()
         {
