@@ -6,7 +6,7 @@ namespace Core.Player.Systems
 {
     public class PlayerPositionSyncSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<PlayerTagComponent, PositionComponent, CachedTransformRefComponent> _ecsFilter = null;
+        private readonly EcsFilter<PlayerTagComponent, PositionComponent, CachedTransformComponent> _ecsFilter = null;
 
         public void Run()
         {

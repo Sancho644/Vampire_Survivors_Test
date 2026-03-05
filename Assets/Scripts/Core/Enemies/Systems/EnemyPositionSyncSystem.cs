@@ -6,7 +6,7 @@ namespace Core.Enemies.Systems
 {
     public class EnemyPositionSyncSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<EnemyTagComponent, PositionComponent, CachedTransformRefComponent> _ecsFilter = null;
+        private readonly EcsFilter<EnemyTagComponent, PositionComponent, CachedTransformComponent> _ecsFilter = null;
 
         public void Run()
         {

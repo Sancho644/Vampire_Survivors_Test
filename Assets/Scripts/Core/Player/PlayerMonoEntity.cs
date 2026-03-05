@@ -12,7 +12,7 @@ namespace Core.Player
         [SerializeField] private MoveInputComponentLink moveInputComponentLink;
         [SerializeField] private PlayerTagComponentLink playerTagComponentLink;
         [SerializeField] private PositionComponentLink positionComponentLink;
-        [SerializeField] private CachedTransformRefComponentLink cachedTransformRefComponentLink;
+        [SerializeField] private CachedTransformComponentLink cachedTransformComponentLink;
 
         protected override void ConfigureEntity(ref EcsEntity ecsEntity)
         {
@@ -20,7 +20,7 @@ namespace Core.Player
             moveInputComponentLink.ApplyComponentOnEntity(ref ecsEntity);
             playerTagComponentLink.ApplyComponentOnEntity(ref ecsEntity);
             positionComponentLink.ApplyComponentOnEntity(ref ecsEntity);
-            cachedTransformRefComponentLink.ApplyComponentOnEntity(ref ecsEntity);
+            cachedTransformComponentLink.ApplyComponentOnEntity(ref ecsEntity);
         }
     }
 }

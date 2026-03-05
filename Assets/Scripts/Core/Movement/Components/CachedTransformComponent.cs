@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Core.Movement.Components
 {
     [Serializable]
-    public struct CachedTransformRefComponent
+    public struct CachedTransformComponent
     {
         [SerializeField] private CachedTransform cachedTransform;
         
