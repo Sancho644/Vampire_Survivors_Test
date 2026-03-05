@@ -5,11 +5,11 @@ namespace Installers
 {
     public class CameraInstaller : MonoInstaller
     {
-        [SerializeField] private Camera camera;
+        [SerializeField] private Camera mainCamera;
 
         public override void InstallBindings()
         {
-            Container.BindInstance(camera).AsSingle();
+            Container.BindInstance(mainCamera).AsSingle();
         }
     }
 }
