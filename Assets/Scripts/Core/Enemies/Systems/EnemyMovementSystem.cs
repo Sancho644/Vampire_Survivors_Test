@@ -9,7 +9,7 @@ namespace Core.Enemies.Systems
     public class EnemyMovementSystem : IEcsRunSystem
     {
         private const float SqrMagnitudeTolerance = 0.0001f;
-        
+
         private readonly EcsFilter<PlayerTagComponent, PositionComponent> _playerFilter = null;
         private readonly EcsFilter<EnemyTagComponent, PositionComponent> _enemyFilter = null;
 
@@ -28,13 +28,16 @@ namespace Core.Enemies.Systems
             foreach (var i in _enemyFilter)
             {
                 var enemyPosCompRef = _enemyFilter.Get2Ref(i);
+
                 ref var enemyPositionComponent = ref enemyPosCompRef.Unref();
 
                 var direction = playerPosition - enemyPositionComponent.Value;
                 var sqrMagnitude = direction.x * direction.x + direction.z * direction.z;
 
                 if (sqrMagnitude < SqrMagnitudeTolerance)
+                {
                     continue;
+                }
 
                 var invLength = 1f / Mathf.Sqrt(sqrMagnitude);
 
