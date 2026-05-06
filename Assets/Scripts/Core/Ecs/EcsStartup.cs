@@ -1,4 +1,5 @@
 ﻿using Core.Enemies.Systems;
+using Core.GameCamera.Systems;
 using Core.Player.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -21,9 +22,10 @@ namespace Core.Ecs
             Systems
                 .Add(_instantiator.Instantiate<PlayerInputSystem>())
                 .Add(_instantiator.Instantiate<PlayerMovementSystem>())
-                .Add(_instantiator.Instantiate<PlayerPositionSyncSystem>())
                 .Add(_instantiator.Instantiate<EnemySpawnSystem>())
                 .Add(_instantiator.Instantiate<EnemyMovementSystem>())
+                .Add(_instantiator.Instantiate<CameraFollowSystem>())
+                .Add(_instantiator.Instantiate<PlayerPositionSyncSystem>())
                 .Add(_instantiator.Instantiate<EnemyPositionSyncSystem>());
 
             Systems.Init();
